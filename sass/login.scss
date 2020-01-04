@@ -1,0 +1,64 @@
+$p:rgb(243, 55, 158);
+$z:#666;
+main{
+    text-align: center;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #ccc;
+    .layout{
+        .box{
+            padding-top: 100px;
+            width: 320px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            .top{
+                text-align: center;
+                width: 320px;
+                display: flex;
+                a{
+                    width: 160px;
+                    color: #000;
+                    margin-bottom: 20px;
+                }
+            }
+            input{
+                margin-top: 5px;
+                border: 0;
+                border-bottom: 1px solid $z;
+                width: 330px;
+                font: 18px/42px "宋体";
+            }
+            .btn{
+                margin-top: 50px;
+                background-color:$p;
+                color: #fff;
+                border-radius: 22px;
+            }
+        }
+        .low{
+            color: $z;
+            padding-top: 20px;
+            margin: 0 auto;
+            width: 320px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .list{
+            padding-top: 50px;
+            display: flex;
+            width: 192px;
+            justify-content: space-between;
+            margin: 0 auto;
+            li{
+                width: 34px;
+                height: 34px;
+                a{
+                    img{
+                        width: 34px;
+                        height: 34px;
+                    }
+                }
+            }
+        }
+        }
+}

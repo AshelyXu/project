@@ -1,0 +1,66 @@
+$b:#000;
+$f:rgb(202, 201, 201);
+$w:#fff;
+header{
+    padding-top: 0;
+    width: 100%;
+    font: 14px/30px "";
+    background: $b;
+    color: $f;
+    .layout{
+        display: flex;
+        justify-content: space-between;
+    }
+    a{
+        color: $f;
+        &:hover{
+            color: rgb(243, 55, 158);
+        }
+    }
+    .left{
+        a{
+            margin-left: 5px;
+            
+        }
+    }
+    .right{
+        display: flex;
+        li{
+            position: relative;
+            width: 92px;
+            height: 30px;
+            a{
+                font: 13px/30px "";
+                color: $f;
+                display: inline-block;
+                width: 92px;
+                white-space: nowrap;
+                text-align: center;
+                &:hover{
+                    color: rgb(243, 55, 158);
+                }
+            }
+            .list1{
+                display: none;
+                background: $f;
+                position: absolute;
+                left: 0;
+                top: 30px;
+                li{
+                    a{
+                        color: $b;
+                    }
+                }
+            }
+            .list2{
+                width: 480px;
+                height: 190px;
+                background: red;
+                display: flex;
+                position: absolute;
+                left: -430px;
+                display: none;
+            }
+        }
+    }
+}
