@@ -4,7 +4,7 @@
  * @姓名: Youmi
  * @Date: 2020-01-05 14:28:19
  * @最后编辑: Youmi
- * @LastEditTime : 2020-01-05 16:22:22
+ * @LastEditTime : 2020-01-05 19:50:43
  */
         var aaa = document.getElementById("aaa");
 		var bbb = document.getElementById("bbb");
@@ -82,11 +82,58 @@ var t= setInterval(() => {
 		btn.style.backgroundColor="#ccc";
 	}
 }, 100);
+var user=document.getElementById("user");
+var pass=document.getElementById("pwd");
+var  url="http://localhost:83/api";
 // 发送ajax请求 进行后端验证
 btn.onclick=function(){	
-	
+	console.log(1);
+	ajaxGet(url,res=>{
+		console.log(res);
+	},{
+		user:user.value,
+		pass:pass.value,
+		type:"zc"
+	})
 }
 
+
+// post方法封装
+function ajaxPost(url,cb,data){
+    data=data||{};
+    var str="";
+    for(var i in data){
+    str+=`${i}=${data[i]}&`;
+    }
+    str=str.slice(0,str.length-1);
+    var ajx=new XMLHttpRequest();
+    ajx.open("post",url,true);
+    ajx.onreadystatechange=function(){
+        if(ajx.readyState===4&&ajx.status===200){
+            cb(ajx.responseText);
+        }
+    }
+    ajx.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    ajx.send(str);
+}
+// get
+function ajaxGet(url,cb,data){
+    data=data||{};
+    var str="";
+    for(var i in data){
+        str+=i+"="+data[i]+"&";
+    }
+    var d=new Date();
+    url=url+"?"+str+"_xzw_T="+d.getTime();
+    var ajx=new XMLHttpRequest;
+    ajx.open("get",url,true);
+    ajx.onreadystatechange=function(){
+        if(ajx.readyState===4&&ajx.status===200){
+            cb(ajx.responseText);
+        }
+    }
+    ajx.send();
+}
 // $(function(){
 //    	$("#btn").click(function(){
 //    		var $u=$("#user").val();
