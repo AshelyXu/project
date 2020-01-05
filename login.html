@@ -2,70 +2,78 @@
  * @说明: 
  * @版本: 2.0
  * @姓名: Youmi
- * @Date: 2020-01-03 22:00:23
+ * @Date: 2020-01-05 14:28:19
  * @最后编辑: Youmi
- * @LastEditTime : 2020-01-04 08:59:25
+ * @LastEditTime : 2020-01-05 14:57:52
  -->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/public.css">
-    <link rel="stylesheet" href="css/login.css">
-</head>
-<body>
-    <header class="layout">
-        <div class="left"><a href="###"><img src="images/logo.png" alt=""></a></div>
-        <div class="right">
-            <div class="top">香港莎莎 官方自营 正货海淘</div>
-            <ul class="down">
-                <li><i class="one"><img src="images/s1.png" alt=""></i><span>官方自营</span></li>
-                <li><i class="two"><img src="images/s2.png" alt=""></i><span>正品担保</span></li>
-                <li><i class="three"><img src="images/s3.png" alt=""></i><span>30天售货服务</span></li>
-            </ul>
-        </div>
-    </header>
-    <main>
-        <div class="layout">
-            <div class="box">
-                <div class="top">
-                    <a href="###" class="topa">账户登录</a>
-                    <a href="###" class="topa">免密码登录</a>
-                </div>
-                <input type="text" class="phone" placeholder="请输入手机/邮箱">
-        <input type="text" class="pass"placeholder="请输入密码">
-        <span></span>
-        <input type="button" class="btn" value="登录"/>
-    </div>
-    <div class="low">
-    <a href="Register.html">立即注册</a>
-    <a href="###">忘记密码？</a> 
-    </div>
-    <ul class="list">
-        <li><a href="####"><img src="images/wbpng.png" alt=""></a></li>
-        <li><a href="####"><img src="images/wx.png" alt=""></a></li>
-        <li><a href="####"><img src="images/zfb.png" alt=""></a></li>
-    </ul>
-        </div>
-    </main>
-    <footer class="layout">
-        <div class="top">
-            <a href="###">公司简介</a><span>|</span>
-            <a href="###">招商合作</a><span>|</span>
-            <a href="###">其他送货地区</a><span>|</span>
-            <a href="###">正货担保</a><span>|</span>
-            <a href="###">使用条款</a><span>|</span>
-            <a href="### ">隐私策略</a><span>|</span>
-            <a href="###">消费者告知书</a><span>|</span>
-            <a href="###">购物指南</a><span>|</span>
-            <a href="###">帮助中心 </a>
-        </div>
-        <div class="down">©Copyright 2020 .All rights resrved 版权所有.郑州莎莎电子商务有限公司 （Member of Sa Sa Group 莎莎集团成员）
-            <i><img src="images/s4.png" alt=""></i> 豫公安备号12121215451215454号
-        </div>
-    </footer>
-</body>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Login</title>
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<!-- <script src="js/gVerify.js"></script> -->
+		
+	</head>
+	<body>
+		<div class="top">
+			<div class="conter">
+			<p>欢迎光临莎莎网！&nbsp;<a href="#">登录</a> 或 <a href="zc.html">免费注册</a></p>
+			<ul>
+				<li><img src="img/wo2.png"/> <a href="#">我的账户 <img src="img/jt2.png" alt="" /></a>
+					<ul class="lis">
+						<li><a href="#">我的订单</a></li>
+						<li><a href="#">我的积分</a></li>
+						<li><a href="#">我的优惠券</a></li>
+						<li><a href="#">我的收藏</a></li>
+						<li><a href="#">我的评价</a></li>
+					</ul>
+				</li>
+				<li><img src="img/gwc6.png"/> <a href="#">我的购物车</a>
+					<ul class="lis2">
+						<p>购物车中还没有商品，</p>
+						<p>赶快去挑选心爱的商品吧</p>
+					</ul>
+				</li>
+				<li><img src="img/sc6.png"/> <a href="#">我的收藏</a></li>
+				<li><a href="#">我的站内信</a></li>
+				<li><a href="#">积分中心</a></li>
+				<li><a href="#">Global site</a></li>
+				<li><a href="#">关注我们</a> <img src="img/wb.png" id="aaa"/> <img src="img/wx.png" id="bbb"/>
+				    <div class="pic11" id="a1"><img src="img/wbo.jpg"/></div>
+				    <div class="pic22" id="b1"><img src="img/wxin.jpg"/></div>
+				</li> 	
+			</ul>  		
+		    </div>
+	   </div>
+	    <div class="logo"><a href="#"><img src="img/logo.png"/></a></div>
+	    <div class="box">
+	    	<div class="conter">
+	    		<div class="l_box"><img src="img/bg.png"/></div>
+	    		<div class="r_box">
+	    			<h1>用户登录</h1><span id="zc"><a href="zc.html">立即注册</a></span><span>还没有莎莎账号？</span>
+	    			<form name="form1" method="get" onsubmit="return checkAll()">
+	    				<input type="text" name="user" id="user" value="" placeholder="邮箱/手机" onblur="checkuser()" autofocus="autofocus"/>
+	    				<p id="utip1"></p>
+	    				<input type="password" name="pwd" id="pwd" value="" placeholder="填写密码" onblur="checkpwd()"/>
+	    				 <p id="utip2"></p>
+	    				<!--<input type="text" name="check" id="code_input" value="" placeholder="填写图片验证码" onblur="checkchk()"/><div id="v_container" ></div><button id = "sx">看不清？   换一张</button> -->
+	    				<p id="utip3"></p>
+	    				<input type="checkbox" name="" id="cb" value="" /><span>记住我</span><span><a href="#">忘记密码？</a></span>
+	    				<input type="button" value="登录" id="btn"/>
+					</form>
+					<!--第三方登录 -->
+	    			<div class="fot">
+	    				<p>第三方账号登录</p>
+	    				<div class="qq"><a href="https://graph.qq.com/oauth/show?which=Login&display=pc&response_type=code&client_id=101195125&redirect_uri=http://www.sasa.com/qqcallback-callback.html&state=acf4f056ab5db1a10bc05dac0b152c9a&scope="><img src="img/login01.jpg"/>QQ登录</a></div>
+	    				<div class="web"><a href="https://api.weibo.com/oauth2/authorize?client_id=1847277018&redirect_uri=http%3A%2F%2Fwww.sasa.com%2Fwbcallback-callback.html&response_type=code"><img src="img/login02.jpg"/>微博登录</a></div>
+	    				<div class="zfb"><a href="https://auth.alipay.com/login/express.htm?goto=https%3A%2F%2Fmemberexprod.alipay.com%3A443%2Fauthorize%2FuserAuthQuickLoginAction.htm%3Fe_i_i_d%3Dfd2ea2ff7c4cd8d7c8df84f7eb285dc6"><img src="img/login03.jpg"/>支付宝登录</a></div>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </div>  
+	</body>
+	<script src="js/login.js"></script>
+	
 </html>

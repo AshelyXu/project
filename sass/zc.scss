@@ -1,0 +1,245 @@
+* {
+   margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  ul {
+    list-style: none;
+  }
+  .top {
+    height: 35px;
+    width: 100%;
+    min-width: 1200px;
+    background-color: #f2f2f2;
+    .conter {
+      height: 35px;
+      width: 1185px;
+      margin: 0 auto;
+      line-height: 35px;
+      position: relative;
+      & > p {
+        font-size: 13px;
+        color: #6c6c6c;
+        float: left;
+      }
+      p {
+        a {
+          color: #ec3e7d;
+        }
+      }
+      li {
+        width: 100px;
+        height: 34px;
+        line-height: 34px;
+        float: left;
+        text-align: center;
+        a {
+          font-size: 13px;
+          color: #6c6c6c;
+          text-decoration: none;
+        }
+        img {
+          margin: -3px auto;
+        }
+        &:nth-of-type(7) {
+          width: 120px;
+        }
+        &:nth-of-type(1) {
+          width: 110px;
+        }
+        &:hover {
+          background-color: #fff;
+          .lis {
+            opacity: 1;
+          }
+          .lis2 {
+            display: block;
+          }
+        }
+      }
+      ul {
+        float: right;
+      }
+      .lis {
+        width: 110px;
+        height: 140px;
+        background-color: #fff;
+        position: absolute;
+        top: 34px;
+        left: 455px;
+        opacity: 0;
+        z-index: 999;
+        box-shadow: 0 1px 2px;
+        transition: all 0.5s ease;
+        li {
+          width: 110px;
+          height: 28px;
+          font-size: 12px;
+          color: #6c6c6c;
+          line-height: 28px;
+          &:hover {
+            a {
+              color: #ec3e7d;
+            }
+          }
+        }
+      }
+      .lis2 {
+        width: 303px;
+        height: 72px;
+        background-color: #fff;
+        position: absolute;
+        top: 35px;
+        left: 362px;
+        display: none;
+        z-index: 999;
+        box-shadow: 0 1px 2px;
+        p {
+          font-size: 12px;
+          color: #6c6c6c;
+          height: 16px;
+          padding-top: 8px;
+          padding-left: 60px;
+          font-family: 黑体;
+        }
+      }
+    }
+  }
+  .top .conter .pic11,.top .conter .pic22,.top .conter .pic11 img,.top .conter .pic22 img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 19px;
+    right: 6px;
+    z-index: 999;
+  }
+  .top .conter .pic11,.top .conter .pic22 {
+    display: none;
+  }
+  .logo {
+    width: 1050px;
+    height: 135px;
+    margin: 0 auto;
+    img {
+      padding-top: 20px;
+    }
+  }
+  .box {
+    width: 1050px;
+    margin: 0 auto;
+    .pic {
+      width: 600px;
+      height: 355px;
+      float: left;
+      margin-top: 100px;
+    }
+    .fom {
+      width: 420px;
+      height: 558px;
+      float: left;
+      padding: 40px;
+      box-shadow: 0 0 2px;
+      position: relative;
+      h2 {
+        color: #6c6c6c;
+        float: left;
+      }
+      #sp1 {
+        font-size: 12px;
+        color: #6c6c6c;
+        padding-left: 98px;
+      }
+      a {
+        text-decoration: none;
+        font-size: 12px;
+        color: #ec3e7d;
+      }
+      #user {
+        width: 350px;
+        height: 36px;
+        outline-color: #ec3e7d;
+        margin-top: 40px;
+      }
+      #pwd {
+        width: 350px;
+        height: 36px;
+        outline-color: #ec3e7d;
+        margin-top: 5px;
+      }
+      #rpwd {
+        width: 350px;
+        height: 36px;
+        outline-color: #ec3e7d;
+        margin-top: 5px;
+      }
+      #yzm {
+        width: 130px;
+        height: 36px;
+        float: left;
+        outline-color: #ec3e7d;
+        margin-top: 5px;
+      }
+      #sx {
+        width: 100px;
+        height: 35px;
+        border: none;
+        outline: none;
+        float: left;
+        margin-left: 10px;
+        color: #6c6c6c;
+      }
+      // #code_input {
+      //   width: 130px;
+      //   height: 35px;
+      //   outline-color: #ec3e7d;
+      //   float: left;
+      // }
+      #v_container {
+        width: 90px;
+        height: 35px;
+        border: 1px solid #ccc;
+        float: left;
+        margin-left: 10px;
+      }
+      #ch1 {
+        margin-top: 90px;
+        margin-left: -340px;
+      }
+      #ch2 {
+        margin-top: 30px;
+      }
+      #btn {
+        width: 350px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        background-color: #ec3e7d;
+        color: #fff;
+        border: none;
+        outline: none;
+        margin-top: 25px;
+        font-size: 18px;
+      }
+      p {
+        height: 20px;
+        font-size: 14px;
+        font-family: 黑体;
+      }
+      #tip4 {
+        height: 20px;
+        font-size: 14px;
+        font-family: 黑体;
+        float: left;
+        position: absolute;
+        padding-top: 25px;
+      }
+    }
+  }
+  .tips_true {
+    color: green;
+    text-align: left;
+  }
+  .tips_false {
+    color: red;
+  }
+  
