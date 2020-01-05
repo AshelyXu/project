@@ -4,7 +4,7 @@
  * @姓名: Youmi
  * @Date: 2020-01-05 14:28:19
  * @最后编辑: Youmi
- * @LastEditTime : 2020-01-05 20:20:13
+ * @LastEditTime : 2020-01-05 21:14:00
  */
 //导航栏的关注我们显示
 var aaa = document.getElementById("aaa");
@@ -43,7 +43,7 @@ var aaa = document.getElementById("aaa");
 		var val=form1.pwd.value;
 		var reg1=/^\S{6,16}$/;
 		if(reg1.test(val)){
-			utip2.innerHTML='<span class="tips_true">输入正确</span>';
+			// utip2.innerHTML='';
 			return true;
 			}else if(val==""){
 				utip2.innerHTML='<span class="tips_false">请输入密码</span>';
@@ -56,4 +56,54 @@ var aaa = document.getElementById("aaa");
 function checkAll(){
 	return checkuser()&&checkpwd();
 }
-
+// 前端表单验证
+var btn=document.getElementById("btn");
+var t= setInterval(() => {
+	if(checkAll()){
+		$('#btn').attr("disabled",false);
+		btn.style.backgroundColor="#ec3e7d";
+	}else{
+		btn.disabled="disabled";
+		btn.style.backgroundColor="#ccc";
+	}
+}, 100);
+var user=document.getElementById("user");
+var pass=document.getElementById("pwd");
+var  url="http://localhost:83/api";
+// 发送ajax请求 进行后端验证
+btn.onclick=function(){	
+	ajaxPost(url,(res)=>{
+		res=JSON.parse(res);
+		if(res.code===2){
+			utip2.innerHTML='<span class="tips_false">密码错误奥</span>';
+		}else{
+			utip2.innerHTML='';
+			alert("恭喜您登录成功,点击确定后3秒后跳转至首页");
+			setInterval(()=>{
+				window.location.href="index.html";
+		},3000);	
+		}
+	},{
+		user:user.value,
+		pass:pass.value,
+		type:"login"
+	})
+}
+// post方法封装
+function ajaxPost(url,cb,data){
+    data=data||{};
+    var str="";
+    for(var i in data){
+    str+=`${i}=${data[i]}&`;
+    }
+    str=str.slice(0,str.length-1);
+    var ajx=new XMLHttpRequest();
+    ajx.open("post",url,true);
+    ajx.onreadystatechange=function(){
+        if(ajx.readyState===4&&ajx.status===200){
+            cb(ajx.responseText);
+        }
+    }
+    ajx.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    ajx.send(str);
+}

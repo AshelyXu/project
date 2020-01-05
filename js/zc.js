@@ -4,7 +4,7 @@
  * @姓名: Youmi
  * @Date: 2020-01-05 14:28:19
  * @最后编辑: Youmi
- * @LastEditTime : 2020-01-05 19:50:43
+ * @LastEditTime : 2020-01-05 21:07:09
  */
         var aaa = document.getElementById("aaa");
 		var bbb = document.getElementById("bbb");
@@ -66,7 +66,6 @@ function checkrpd(){
 		}else{
 			tip3.innerHTML='<span class="tips_false">两次密码不一致，请重新输入</span>';
 			return false;
-			
 		   }
 }
 // 设置按钮的disabled发送状态
@@ -87,9 +86,16 @@ var pass=document.getElementById("pwd");
 var  url="http://localhost:83/api";
 // 发送ajax请求 进行后端验证
 btn.onclick=function(){	
-	console.log(1);
-	ajaxGet(url,res=>{
-		console.log(res);
+	ajaxGet(url,(res)=>{
+		 res=JSON.parse(res);
+		if(res.code===0){
+			alert("该用户已被注册换个名字哦！");
+		}else{
+			alert("恭喜您注册成功,点击确定后3秒后跳转至登录页");
+			setInterval(()=>{
+				window.location.href="login.html";
+		},3000);	
+		}
 	},{
 		user:user.value,
 		pass:pass.value,
@@ -98,24 +104,7 @@ btn.onclick=function(){
 }
 
 
-// post方法封装
-function ajaxPost(url,cb,data){
-    data=data||{};
-    var str="";
-    for(var i in data){
-    str+=`${i}=${data[i]}&`;
-    }
-    str=str.slice(0,str.length-1);
-    var ajx=new XMLHttpRequest();
-    ajx.open("post",url,true);
-    ajx.onreadystatechange=function(){
-        if(ajx.readyState===4&&ajx.status===200){
-            cb(ajx.responseText);
-        }
-    }
-    ajx.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-    ajx.send(str);
-}
+
 // get
 function ajaxGet(url,cb,data){
     data=data||{};
@@ -134,19 +123,4 @@ function ajaxGet(url,cb,data){
     }
     ajx.send();
 }
-// $(function(){
-//    	$("#btn").click(function(){
-//    		var $u=$("#user").val();
-//    		var $p=$("#pwd").val();
-//    		$.get("http://datainfo.duapp.com/shopdata/userinfo.php?status=register&userID="+$u+"&password="+$p,function(res,status,xhr){
-// //			console.log(res);
-// 			if(res==1){
-// 				window.location.href="login.html";
-// 			}else if(res==0){
-// 				$("#tip1").text("用户名已被注册");
-// 			}else if(res==2){
-// 				alert("数据库报错");
-// 			}
-//    		})
-//    	})
-//    })
+
