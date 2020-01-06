@@ -4,7 +4,7 @@
  * @姓名: Youmi
  * @Date: 2020-01-05 14:28:19
  * @最后编辑: Youmi
- * @LastEditTime : 2020-01-05 21:14:00
+ * @LastEditTime : 2020-01-06 08:52:18
  */
 //导航栏的关注我们显示
 var aaa = document.getElementById("aaa");
@@ -103,7 +103,7 @@ function ajaxPost(url,cb,data){
         if(ajx.readyState===4&&ajx.status===200){
             cb(ajx.responseText);
         }
-    }
+	}
     ajx.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
     ajx.send(str);
 }

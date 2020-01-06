@@ -1,10 +1,4 @@
-//      $(function(){
-//      	$(".top li:first-child").mouseover(function(){
-//      		$(".top .conter ul li:first-child .lis").slideDown(1000);
-//      	});
-//      });
-//      
-        
+		//导航
         var aaa = document.getElementById("aaa");
 		var bbb = document.getElementById("bbb");
 		var a1 = document.getElementById("a1");
@@ -21,7 +15,7 @@
 		bbb.onmouseout=function(){
 			b1.style.display="none"
 		}
-
+        // 轮播图
         var banner = document.getElementsByClassName("banner")[0];
 		var pics = banner.getElementsByClassName("pic");
 		var span= banner.getElementsByTagName("span");
@@ -60,7 +54,6 @@
 				}
 			}(i))
 		}
-	
 // 楼层
 $(function(){
 			function move(){
@@ -92,7 +85,6 @@ $(function(){
 			}
 			if(sT<5000&&sT>450){
 				$(".elevator").fadeIn(1000);
-//				$(".elevator").css("position","fixed");
 			}else{
 				$(".elevator").fadeOut(1000);
 			}
@@ -101,10 +93,15 @@ $(function(){
 				$(this).addClass("now").siblings("li.now").removeClass("now");
 				var n=$(this).index();
 				var oT=$(".step").eq(n).offset().top;
-				$("body").animate({"scrollTop":oT-50},1000);
+				$("html").stop().animate({scrollTop:oT-50}
+					,1000);
+				console.log($("html").scrollTop());
+				
 			})
+			// 回到顶部效果
 			$("li.toTop").click(function(){
-				$("body").animate({"scrollTop":0},500);
+				$("body").stop().animate({scrollTop:0}
+					,500);
 			
 		 })
 
@@ -130,21 +127,21 @@ $(function(){
     time.innerHTML = x+":"+m+":"+c;
 }
 	setInterval(function() {
-			shijian("2017,9,10",lo);
+			shijian("2020,1,6",lo);
 			},1000);
 	
 	setInterval(function() {
-			shijian("2017,9,10",lo1);
+			shijian("2020,1,6",lo1);
 			},1000);
 	setInterval(function() {
-			shijian("2017,9,10",lo2);
+			shijian("2020,1,6",lo2);
 			},1000);
 	setInterval(function() {
-			shijian("2017,9,10",lo3);
+			shijian("2020,1,9",lo3);
 			},1000);
 			
 //ajax
-
+// 搜索框-调用百度的接口
 $("#ipt").keyup(function(){
 			var $v = $(this).val();
 			$.ajax({
