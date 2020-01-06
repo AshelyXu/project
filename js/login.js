@@ -4,7 +4,7 @@
  * @姓名: Youmi
  * @Date: 2020-01-05 14:28:19
  * @最后编辑: Youmi
- * @LastEditTime : 2020-01-06 08:52:18
+ * @LastEditTime : 2020-01-06 18:55:06
  */
 //导航栏的关注我们显示
 var aaa = document.getElementById("aaa");
@@ -74,9 +74,14 @@ var  url="http://localhost:83/api";
 btn.onclick=function(){	
 	ajaxPost(url,(res)=>{
 		res=JSON.parse(res);
+		console.log(res);
 		if(res.code===2){
 			utip2.innerHTML='<span class="tips_false">密码错误奥</span>';
-		}else{
+		}
+		if(res.code===0){
+			utip2.innerHTML='<span class="tips_false">暂未注册，快去吧<a href="zc.html" class="zc">注册</a></span>';
+		}
+		if(res.code===1){
 			utip2.innerHTML='';
 			alert("恭喜您登录成功,点击确定后3秒后跳转至首页");
 			setInterval(()=>{

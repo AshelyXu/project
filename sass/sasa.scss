@@ -944,29 +944,33 @@
     .conter {
       width: 1185px;
       margin: 0 auto;
+      position: relative;
+    }
+    .wz {
+      width: 300px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      background-color: #f2f2f2;
+      position: absolute;
+      top: -22px;
+      left: 450px;
+      h2 {
+        font-size: 28px;
+        font-family: "黑体";
+      }
     }
     .step {
       &.step1 {
         height: 960px;
-        width: 1185px;
+        max-width: 1185px;
         margin: 0 auto;
         border-bottom: 1px solid #e4e4e4;
         position: relative;
         padding-top: 40px;
-        .wz {
-          width: 300px;
-          height: 40px;
-          text-align: center;
-          line-height: 40px;
-          background-color: #f2f2f2;
-          position: absolute;
-          top: -22px;
-          left: 450px;
-          h2 {
-            font-size: 28px;
-            font-family: "黑体";
-          }
-        }
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
         .pic1 {
           width: 580px;
           height: 260px;
@@ -1210,275 +1214,6 @@
             &:hover {
               background-color: #c53265;
             }
-          }
-        }
-      }
-      &.step2 {
-        height: 1630px;
-        width: 1185px;
-        margin: 0 auto;
-        border-bottom: 1px solid #e4e4e4;
-        position: relative;
-        margin-top: 70px;
-        .wz1 {
-          width: 330px;
-          height: 72px;
-          text-align: center;
-          line-height: 35px;
-          background-color: #f2f2f2;
-          position: absolute;
-          top: -90px;
-          left: 450px;
-          h2 {
-            font-size: 28px;
-            font-family: 黑体;
-          }
-          p {
-            font-size: 22px;
-            color: #6c6c6c;
-            span {
-              font-size: 24px;
-              font-weight: bolder;
-            }
-          }
-        }
-        .tu1 {
-          width: 1185px;
-          height: 360px;
-          cursor: pointer;
-          position: relative;
-          .dic {
-            width: 70px;
-            height: 70px;
-            background-color: #ec3e7d;
-            border-radius: 35px;
-            position: absolute;
-            left: 15px;
-            top: 13px;
-            text-align: center;
-            line-height: 70px;
-            p {
-              color: #fff;
-              font-weight: bolder;
-              span {
-                font-size: 24px;
-              }
-            }
-          }
-          & > img {
-            width: 640px;
-            height: 360px;
-            float: left;
-          }
-          .rtu1 {
-            width: 545px;
-            height: 360px;
-            float: right;
-            padding: 40px 40px;
-            position: relative;
-            background-color: #ffffff;
-            .time {
-              width: 118px;
-              height: 24px;
-              background-color: #414141;
-              line-height: 22px;
-              padding-left: 10px;
-              span {
-                color: #ffffff;
-                font-size: 12px;
-                font-weight: bold;
-              }
-              #tm {
-                color: #ffffff;
-                font-size: 18px;
-              }
-            }
-            h3 {
-              font-weight: normal;
-              padding-top: 15px;
-              line-height: 28px;
-            }
-          }
-          .btn1 {
-            width: 90px;
-            height: 33px;
-            background-color: #ec3e7d;
-            text-align: center;
-            line-height: 33px;
-            position: absolute;
-            right: 40px;
-            bottom: 40px;
-            span {
-              color: #fff;
-              font-weight: bold;
-            }
-            &:hover {
-              background-color: #c53265;
-            }
-          }
-        }
-        .rtu1 {
-          p {
-            &:nth-of-type(1) {
-              padding-top: 65px;
-              font-size: 14px;
-              color: #6c6c6c;
-            }
-            &:nth-of-type(2) {
-              font-size: 14px;
-              font-weight: bolder;
-              color: #ec3e7d;
-              padding-top: 10px;
-              #s1 {
-                font-size: 30px;
-                font-weight: bolder;
-              }
-              #s2 {
-                font-size: 14px;
-                color: #6c6c6c;
-                text-decoration: line-through;
-                font-weight: bolder;
-              }
-            }
-            &:nth-of-type(3) {
-              font-size: 13px;
-              color: #6c6c6c;
-              padding-top: 20px;
-            }
-          }
-        }
-        .tu2 {
-          width: 1185px;
-          height: 360px;
-          cursor: pointer;
-          position: relative;
-          margin-top: 26px;
-          .dic1 {
-            width: 70px;
-            height: 70px;
-            background-color: #ec3e7d;
-            border-radius: 35px;
-            position: absolute;
-            left: 15px;
-            top: 13px;
-            text-align: center;
-            line-height: 70px;
-            p {
-              color: #fff;
-              font-weight: bolder;
-              span {
-                font-size: 24px;
-              }
-            }
-          }
-          & > img {
-            width: 640px;
-            height: 360px;
-            float: left;
-          }
-          .rtu2 {
-            width: 545px;
-            height: 360px;
-            float: right;
-            padding: 40px 40px;
-            position: relative;
-            background-color: #ffffff;
-            .time {
-              width: 118px;
-              height: 24px;
-              background-color: #414141;
-              line-height: 22px;
-              padding-left: 10px;
-              span {
-                color: #ffffff;
-                font-size: 12px;
-                font-weight: bold;
-              }
-              #tm {
-                color: #ffffff;
-                font-size: 18px;
-              }
-              #tm1 {
-                color: #ffffff;
-                font-size: 18px;
-              }
-              #tm2 {
-                color: #ffffff;
-                font-size: 18px;
-              }
-              #tm3 {
-                color: #ffffff;
-                font-size: 18px;
-              }
-            }
-            h3 {
-              font-weight: normal;
-              padding-top: 15px;
-              line-height: 28px;
-            }
-          }
-          .btn2 {
-            width: 90px;
-            height: 33px;
-            background-color: #ec3e7d;
-            text-align: center;
-            line-height: 33px;
-            position: absolute;
-            right: 40px;
-            bottom: 40px;
-            span {
-              color: #fff;
-              font-weight: bold;
-            }
-            &:hover {
-              background-color: #c53265;
-            }
-          }
-        }
-        .rtu2 {
-          p {
-            &:nth-of-type(1) {
-              padding-top: 90px;
-              font-size: 14px;
-              color: #6c6c6c;
-            }
-            &:nth-of-type(2) {
-              font-size: 14px;
-              font-weight: bolder;
-              color: #ec3e7d;
-              padding-top: 10px;
-              #s1 {
-                font-size: 30px;
-                font-weight: bolder;
-              }
-              #s2 {
-                font-size: 14px;
-                color: #6c6c6c;
-                text-decoration: line-through;
-                font-weight: bolder;
-              }
-            }
-            &:nth-of-type(3) {
-              font-size: 13px;
-              color: #6c6c6c;
-              padding-top: 20px;
-            }
-          }
-        }
-        .more {
-          width: 160px;
-          height: 38px;
-          border-radius: 19px;
-          line-height: 38px;
-          text-align: center;
-          background-color: #ec3e7d;
-          position: absolute;
-          left: 530px;
-          bottom: 53px;
-          span {
-            color: #ffffff;
-            font-size: 14px;
-            font-weight: bold;
           }
         }
       }
@@ -1937,15 +1672,16 @@
       line-height: 50px;
       text-align: center;
       background-color: #fff;
+      cursor: pointer;
       p {
         font-size: 14px;
         color: #6c6c6c;
-        font-family: 黑体;
+        font-family: "黑体";
       }
       &.now {
-        background-color: #ec3e7d;
+        // background-color: #ec3e7d;
         p {
-          font-family: 黑体;
+          font-family: "黑体";
           font-size: 14px;
           color: #fff;
         }
@@ -2123,4 +1859,3 @@
       }
     }
   }
-  

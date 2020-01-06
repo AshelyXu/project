@@ -1,3 +1,66 @@
+		// 开始的时候渲染页面
+		function display(){
+			var url="http://localhost:83/data/data.json";
+			ajaxPost(url,(res)=>{
+				res=JSON.parse(res);
+				// console.log(res);
+				var str="";
+					for(var i=0;i<res.length;i++){
+						str+=`<div class="pic1" id=${res[i].id}>
+						<a href="#"><img src="${res[i].img}"/></a>
+						<div class="rpic1">
+							<h2><a href="#">${res[i].name}</a></h2>
+							<h3><a href="#">${res[i].tip}</a></h3>
+							<p><a href="#">${res[i].explain}</a></p>
+							<div class="btn1"><span>加入购物车</span></div>
+						</div>
+					</div>`
+					}
+					$(".step1").html(str)
+			})
+		}
+		display();
+		
+		// var arr_data=[];
+		// 点击加入购物车
+		var arr_data;
+		$(".step1").on("click",".btn1",function(){
+			// console.log(1);
+			 var a=$(this).parent().parent();
+			// 拿到对应的id
+			//  存localStorage---[{}]
+			 arr_data=localStorage.getItem("xzw")?JSON.parse(localStorage.getItem("xzw")):[];
+			// console.log(arr_data);
+			if(arr_data.length>=1){
+				var onoff=true;
+				for(var i=0;i<arr_data.length;i++){
+					if(arr_data[i].id===a.attr("id")){
+						arr_data[i].num++;
+						onoff=false;
+					}
+				}
+				if(onoff){
+					arr_data.push({
+						id:a.attr("id"),
+						num:1
+					})
+				}	
+			}else{
+				arr_data.push({
+				id:a.attr("id"),
+				num:1
+			})
+			}
+			// 第一次存，已有数据但是这个商品第一次存，这个商品是第二次存；
+			// arr.push({
+			// 	id:a.attr("id"),
+			// 	num:1
+			// })
+			localStorage.setItem("xzw",JSON.stringify(arr_data));
+		})
+		// console.log(arr);
+		
+		
 		//导航
         var aaa = document.getElementById("aaa");
 		var bbb = document.getElementById("bbb");
@@ -78,12 +141,15 @@ $(function(){
 			});
 			});
 			$(".elevator li").click(function(){
-				$(this).addClass("now").siblings("li.now").removeClass("now");
+				$(this).css({
+					background: "#ec3e7d"
+				}).siblings().css({
+					background: "#fff"
+				})
 				var n=$(this).index();
 				var oT=$(".step").eq(n).offset().top;
 				$("html").stop().animate({scrollTop:oT-50}
 					,1000);
-				// console.log($("html").scrollTop());
 			})
 			// 回到顶部效果
 			$("li.toTop").click(function(){

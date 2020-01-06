@@ -1,2 +1,45 @@
-[{}
+[{
+    "name":"全肌",
+    "tip":"中国品牌",
+    "explain":"为肌肤加设层层锁水膜",
+    "img":"img/pic1.jpg",
+    "id":"1",
+    "price":"100"
+},{
+    "name":"碧柔防晒",
+    "tip":"绝对清爽不留白",
+    "explain":"中国连续五年畅销NO.1",
+    "img":"img/pic2.jpg",
+    "id":"2",
+    "price":"150"
+},{
+    "name":"人气彩妆护肤品牌",
+    "tip":"CYBER COLORS",
+    "explain":"塑造迷人妆容",
+    "img":"img/pic3.jpg",
+    "id":"3",
+    "price":"300"
+},{
+    "name":"Christian Dior",
+    "tip":"法国顶级美妆品牌",
+    "explain":"限时特卖",
+    "img":"img/pic4.jpg",
+    "id":"4",
+    "price":"600"
+},
+{
+    "name":"MVSK",
+    "tip":"法国顶级美妆品牌",
+    "explain":"全场低至1.2折",
+    "img":"img/pic5.jpg",
+    "id":"5",
+    "price":"200"
+},
+{
+    "name":"sasatinnie",
+    "explain":"100强热卖产品",
+    "img":"img/pic1.jpg",
+    "id":"6",
+    "price":"170"
+}
 ]
