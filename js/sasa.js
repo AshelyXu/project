@@ -54,7 +54,7 @@
 				}
 			}(i))
 		}
-// 楼层
+// 公告栏+侧边
 $(function(){
 			function move(){
 				$(".note .conter ul").animate({"margin-top":"-30px"},800,function(){
@@ -64,8 +64,6 @@ $(function(){
 			}
 			setInterval(move,5000);
 		});
-	
-
 $(function(){
 			$(window).scroll(function(){
 				var sT=$(window).scrollTop();
@@ -78,16 +76,6 @@ $(function(){
 					$(".elevator li").eq(i).removeClass("now");
 				}
 			});
-			if(sT>50){
-				$(".toTop").css("display","block");
-			}else{
-				$(".toTop").css("display","none");
-			}
-			if(sT<5000&&sT>450){
-				$(".elevator").fadeIn(1000);
-			}else{
-				$(".elevator").fadeOut(1000);
-			}
 			});
 			$(".elevator li").click(function(){
 				$(this).addClass("now").siblings("li.now").removeClass("now");
@@ -95,50 +83,14 @@ $(function(){
 				var oT=$(".step").eq(n).offset().top;
 				$("html").stop().animate({scrollTop:oT-50}
 					,1000);
-				console.log($("html").scrollTop());
-				
+				// console.log($("html").scrollTop());
 			})
 			// 回到顶部效果
 			$("li.toTop").click(function(){
 				$("body").stop().animate({scrollTop:0}
 					,500);
-			
 		 })
-
 		})	
-		
-//倒计时
-
-    var lo = document.getElementById("tm");
-    var lo1 = document.getElementById("tm1");
-	var lo2 = document.getElementById("tm2");
-	var lo3 = document.getElementById("tm3");
-	function shijian(sj,time){
-    var d = new Date(sj);
-	var t = d.getTime();
-	var t2 = new Date();
-	var d2 = t2.getTime();
-	var d4 = (t-d2);
-	var r=parseInt(d4/1000);
-	var h = Math.floor(r/(3600*24));
-	var x = Math.floor((r-(h*3600*24))/(60*60));
-	var m =Math.floor((r-((h*3600*24)+(60*60*x)))/60);
-	var c =Math.floor(r-((h*3600*24)+(60*60*x)+(60*m)));
-    time.innerHTML = x+":"+m+":"+c;
-}
-	setInterval(function() {
-			shijian("2020,1,6",lo);
-			},1000);
-	
-	setInterval(function() {
-			shijian("2020,1,6",lo1);
-			},1000);
-	setInterval(function() {
-			shijian("2020,1,6",lo2);
-			},1000);
-	setInterval(function() {
-			shijian("2020,1,9",lo3);
-			},1000);
 			
 //ajax
 // 搜索框-调用百度的接口
