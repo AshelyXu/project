@@ -106,8 +106,8 @@ table {
     text-align: center;
     border-bottom: solid 1px #ccc;
     img {
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 120px;
       } 
   }
   
@@ -133,11 +133,13 @@ table {
   }
   
   .remove {
+    text-align: center;
     border: 0;
+    padding: 5px;
     background: rgb(212, 22, 22);
     color: wheat;
     height: 20px;
-    font: 16px/20px "";
+    font: 15px/15px "";
     border-radius: 3px;
   }
   .xia {
@@ -164,5 +166,14 @@ table {
     color: #fff;
     font: 16px/30px "";
     border-radius: 6px;
+    padding: 5px;
     margin-left: 5px;
   }
+td{
+  padding-top: 3px;
+  .check{
+    border: none;
+    width: 15px;
+    height: 15px;
+  }
+}

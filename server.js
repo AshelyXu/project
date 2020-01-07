@@ -4,7 +4,7 @@
  * @姓名: Youmi
  * @Date: 2020-01-05 15:11:59
  * @最后编辑: Youmi
- * @LastEditTime : 2020-01-05 20:13:21
+ * @LastEditTime : 2020-01-07 22:01:05
  */
 const http=require("http");
 const fs=require("fs");
@@ -41,6 +41,7 @@ function fileManage(req,res){
 }
 // 用来存储用户名和密码
 let userMag=[];
+let idMsg={};
 
 // 请求ajx的封装
 function ajxManage(req,res){
@@ -59,9 +60,18 @@ function ajxManage(req,res){
         if(data.type=="login"){
             // 登录
              dl(res,data);
-        }else{
+        }
+        if(data.type=="zc"){
             // 注册
         zc(res,data);
+        }
+        if(data.type=="details"){
+            // 详情页
+            details(res,data);
+        }
+        if(data.type=="load"){
+            res.write(JSON.stringify(idMsg));
+            res.end();
         }
     });  
 }
@@ -114,4 +124,16 @@ if(on){
     res.write(JSON.stringify(resMsg));
     res.end();
 }
+}
+
+// 存储当前点击的图片id
+function details(res,data){
+    idMsg={};
+    // console.log(data);
+    // console.log(data);
+    idMsg.id=data.id;
+    // idMsg.push(data.id);
+    // console.log(resMsg);
+    // res.write(JSON.stringify(resMsg));
+    res.end();
 }

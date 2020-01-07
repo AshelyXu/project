@@ -7,20 +7,36 @@
 				var str="";
 					for(var i=0;i<res.length;i++){
 						str+=`<div class="pic1" id=${res[i].id}>
-						<a href="#"><img src="${res[i].img}"/></a>
+						<a href="####"><img src="${res[i].img}" class="img"/></a>
 						<div class="rpic1">
-							<h2><a href="#">${res[i].name}</a></h2>
-							<h3><a href="#">${res[i].tip}</a></h3>
-							<p><a href="#">${res[i].explain}</a></p>
+							<h2><a href="####">${res[i].name}</a></h2>
+							<h3><a href="####">${res[i].tip}</a></h3>
+							<p><a href="####">${res[i].explain}</a></p>
 							<div class="btn1"><span>加入购物车</span></div>
 						</div>
 					</div>`
 					}
-					$(".step1").html(str)
+					$(".step1").html(str);
 			})
 		}
 		display();
-		
+		// 图片的点击事件进入详情页
+		$(".step1").on("click",".img",function(){
+			// console.log("要去详情页");
+			// console.log($(this).parent().parent().attr("id"));
+			var a=$(this).parent().parent().attr("id");
+			url="http://localhost:83/api";
+            ajaxGet(url,function(res){
+				console.log(1);
+				
+				window.location.href="details.html";
+				console.log(res);
+			},{
+				id:a,
+				type:"details"
+			})
+			
+		})
 		// var arr_data=[];
 		// 点击加入购物车
 		var arr_data;
@@ -142,9 +158,11 @@ $(function(){
 			});
 			$(".elevator li").click(function(){
 				$(this).css({
-					background: "#ec3e7d"
+					background: "#ec3e7d",
+					color:"#000"
 				}).siblings().css({
-					background: "#fff"
+					background: "#fff",
+					color:"#ccc"
 				})
 				var n=$(this).index();
 				var oT=$(".step").eq(n).offset().top;
