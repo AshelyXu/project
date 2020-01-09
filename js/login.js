@@ -4,7 +4,7 @@
  * @姓名: Youmi
  * @Date: 2020-01-05 14:28:19
  * @最后编辑: Youmi
- * @LastEditTime : 2020-01-06 18:55:06
+ * @LastEditTime : 2020-01-08 19:26:55
  */
 //导航栏的关注我们显示
 var aaa = document.getElementById("aaa");
@@ -60,6 +60,7 @@ function checkAll(){
 var btn=document.getElementById("btn");
 var t= setInterval(() => {
 	if(checkAll()){
+		// utip2.innerHTML='';
 		$('#btn').attr("disabled",false);
 		btn.style.backgroundColor="#ec3e7d";
 	}else{
@@ -74,7 +75,7 @@ var  url="http://localhost:83/api";
 btn.onclick=function(){	
 	ajaxPost(url,(res)=>{
 		res=JSON.parse(res);
-		console.log(res);
+		// console.log(res);
 		if(res.code===2){
 			utip2.innerHTML='<span class="tips_false">密码错误奥</span>';
 		}

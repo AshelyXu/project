@@ -1,6 +1,6 @@
 		// 开始的时候渲染页面
 		function display(){
-			var url="http://localhost:83/data/data.json";
+		var url="http://localhost:83/data/data.json";
 			ajaxPost(url,(res)=>{
 				res=JSON.parse(res);
 				// console.log(res);
@@ -27,7 +27,7 @@
 			var a=$(this).parent().parent().attr("id");
 			url="http://localhost:83/api";
             ajaxGet(url,function(res){
-				console.log(1);
+				// console.log(1);
 				
 				window.location.href="details.html";
 				console.log(res);
@@ -178,28 +178,43 @@ $(function(){
 			
 //ajax
 // 搜索框-调用百度的接口
-$("#ipt").keyup(function(){
-			var $v = $(this).val();
-			$.ajax({
-				type:"get",
-				url:"https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=" + $v + "&cb=?",
-				async:true,
-				dataType:"jsonp",
-				success:function(res){
-//					console.log(res)
-					var d = res.s;
-					$(".lis1-1").empty();
-					$.each(d,function(i,v){
-						var $li = $("<li>");
-						$li.html(v);
-						$(".lis1-1").append($li);
-					});
-				}
-			});
-		});
+// $("#ipt").keyup(function(){
+// 			var $v = $(this).val();
+// 			$.ajax({
+// 				type:"get",
+// 				url:"https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=" + $v + "&cb=?",
+// 				async:true,
+// 				dataType:"jsonp",
+// 				success:function(res){
+// //					console.log(res)
+// 					var d = res.s;
+// 					$(".lis1-1").empty();
+// 					$.each(d,function(i,v){
+// 						var $li = $("<li>");
+// 						$li.html(v);
+// 						$(".lis1-1").append($li);
+// 					});
+// 				}
+// 			});
+// 		});
 		
-$("#ipt").keyup(function(){
-	$(".lis1-1").css("display","block")
-}).blur(function(){
-	$(".lis1-1").css("display","none")
+// $("#ipt").keyup(function(){
+// 	$(".lis1-1").css("display","block")
+// }).blur(function(){
+// 	$(".lis1-1").css("display","none")
+// })
+$("#btn").on("click",function(){
+	// console.log("点击成功");
+	
+	// console.log($("#ipt").val());
+	url="http://localhost:83/api";
+	ajaxGet(url,function(res){
+		// console.log(res);
+		
+		console.log(1);
+		window.location.href="search.html"
+	},{
+		name:$("#ipt").val(),
+		type:"search"
+	})
 })
